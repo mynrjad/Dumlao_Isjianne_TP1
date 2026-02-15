@@ -1,152 +1,74 @@
-<?php
-$name = "Isjianne A. Dumlao";
-$title = "Arts Major · Illustrator · Creative Soul";
-
-$about = [
-    "I am an arts major who finds meaning in quiet details, expressive lines, and the spaces between strokes. Drawing has always been my most honest language. It allows me to translate emotions, fleeting thoughts, and everyday observations into something tangible.",
-    "Outside of sketching, I immerse myself in games not just as entertainment, but as worlds of storytelling and visual atmosphere. I admire how interactive spaces can evoke emotion the same way a painting does.",
-    "Music is another extension of that creativity. Playing the guitar gives rhythm to my thoughts and balance to my days. I create because it feels natural. I draw because I cannot not draw."
-];
-
-$artworks = [
-    "https://pbs.twimg.com/media/G6a73VPbgAEGmXD?format=jpg&name=4096x4096",
-    "https://pbs.twimg.com/media/G5hLdpqagAAkuJ-?format=jpg&name=4096x4096",
-    "https://pbs.twimg.com/media/G14AatIbgAApKQk?format=jpg&name=4096x4096",
-    "https://pbs.twimg.com/media/G0LWBqRbMAALfV-?format=jpg&name=4096x4096"
-];
-
-$interests = [
-    "Illustration",
-    "Character Design",
-    "Visual Storytelling",
-    "Narrative Games",
-    "Acoustic Guitar",
-    "Sketchbooks",
-    "Light and Shadow Studies",
-    "Quiet Creative Spaces"
-];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo $name; ?></title>
-
+<title>Isjianne A. Dumlao</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
-    margin: 0;
+    margin:0;
     font-family: 'Inter', sans-serif;
-    background: #f7f6f3;
-    color: #2a2a2a;
-    line-height: 1.7;
+    background:#f7f6f3;
+    color:#2a2a2a;
+    line-height:1.6;
 }
-
 .container {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 20px;
+    max-width:900px;
+    margin:80px auto;
+    padding:0 20px;
 }
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1rem;
-    opacity: 0.6;
-    margin-bottom: 60px;
-}
-
-.section {
-    margin-bottom: 80px;
-}
-
-.section h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 6px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.interests span {
-    display: inline-block;
-    margin: 6px 10px 6px 0;
-    padding: 6px 12px;
-    background: #eae7e1;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-footer {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.5;
-    margin-top: 100px;
-    margin-bottom: 40px;
-}
+h1 { font-family:'Playfair Display', serif; font-size:2.8rem; margin-bottom:10px; }
+.subtitle { font-size:1rem; opacity:0.6; margin-bottom:60px; }
+.section { margin-bottom:80px; }
+.section h2 { font-family:'Playfair Display', serif; font-weight:600; font-size:1.8rem; margin-bottom:20px; }
+p { max-width:700px; }
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.gallery img { width:100%; border-radius:6px; transition:transform 0.4s ease, box-shadow 0.4s ease; }
+.gallery img:hover { transform:scale(1.03); box-shadow:0 20px 40px rgba(0,0,0,0.1); }
+.interests span { display:inline-block; margin:6px 10px 6px 0; padding:6px 12px; background:#eae7e1; border-radius:20px; font-size:0.9rem; }
+footer { text-align:center; font-size:0.9rem; opacity:0.5; margin-top:100px; margin-bottom:40px; }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-    <h1><?php echo $name; ?></h1>
-    <div class="subtitle"><?php echo $title; ?></div>
+    <h1>Isjianne A. Dumlao</h1>
+    <div class="subtitle">Arts Major · Illustrator · Creative Soul</div>
 
     <div class="section">
         <h2>About</h2>
-        <?php foreach ($about as $paragraph): ?>
-            <p><?php echo $paragraph; ?></p>
-        <?php endforeach; ?>
+        <p>I am an arts major who finds meaning in quiet details, expressive lines, and the spaces between strokes. Drawing has always been my most honest language.</p>
+        <p>Outside of sketching, I immerse myself in games not just as entertainment, but as worlds of storytelling and visual atmosphere.</p>
+        <p>Music is another extension of that creativity. Playing the guitar gives rhythm to my thoughts and balance to my days.</p>
     </div>
 
     <div class="section">
         <h2>Selected Works</h2>
         <div class="gallery">
-            <?php foreach ($artworks as $art): ?>
-                <img src="<?php echo $art; ?>" alt="Artwork">
-            <?php endforeach; ?>
+            <img src="https://pbs.twimg.com/media/G6a73VPbgAEGmXD?format=jpg&name=4096x4096" alt="Artwork 1">
+            <img src="https://pbs.twimg.com/media/G5hLdpqagAAkuJ-?format=jpg&name=4096x4096" alt="Artwork 2">
+            <img src="https://pbs.twimg.com/media/G14AatIbgAApKQk?format=jpg&name=4096x4096" alt="Artwork 3">
+            <img src="https://pbs.twimg.com/media/G0LWBqRbMAALfV-?format=jpg&name=4096x4096" alt="Artwork 4">
         </div>
     </div>
 
     <div class="section">
         <h2>Interests</h2>
         <div class="interests">
-            <?php foreach ($interests as $interest): ?>
-                <span><?php echo $interest; ?></span>
-            <?php endforeach; ?>
+            <span>Illustration</span>
+            <span>Character Design</span>
+            <span>Visual Storytelling</span>
+            <span>Narrative Games</span>
+            <span>Acoustic Guitar</span>
+            <span>Sketchbooks</span>
         </div>
     </div>
 
-    <footer>
-        © <?php echo date("Y"); ?> <?php echo $name; ?>
-    </footer>
+    <footer>© 2026 Isjianne A. Dumlao</footer>
 
 </div>
-
 </body>
 </html>
