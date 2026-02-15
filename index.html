@@ -1,8 +1,30 @@
 <?php
-$name = "Mynrjad";
-$title = "UI/UX Designer & Experience Architect";
-$xp = 87; // Skill level progress
-$level = 12;
+$name = "Isjianne A. Dumlao";
+$title = "Arts Major · Illustrator · Creative Soul";
+
+$about = [
+    "I am an arts major who finds meaning in quiet details, expressive lines, and the spaces between strokes. Drawing has always been my most honest language. It allows me to translate emotions, fleeting thoughts, and everyday observations into something tangible.",
+    "Outside of sketching, I immerse myself in games not just as entertainment, but as worlds of storytelling and visual atmosphere. I admire how interactive spaces can evoke emotion the same way a painting does.",
+    "Music is another extension of that creativity. Playing the guitar gives rhythm to my thoughts and balance to my days. I create because it feels natural. I draw because I cannot not draw."
+];
+
+$artworks = [
+    "https://pbs.twimg.com/media/G6a73VPbgAEGmXD?format=jpg&name=4096x4096",
+    "https://pbs.twimg.com/media/G5hLdpqagAAkuJ-?format=jpg&name=4096x4096",
+    "https://pbs.twimg.com/media/G14AatIbgAApKQk?format=jpg&name=4096x4096",
+    "https://pbs.twimg.com/media/G0LWBqRbMAALfV-?format=jpg&name=4096x4096"
+];
+
+$interests = [
+    "Illustration",
+    "Character Design",
+    "Visual Storytelling",
+    "Narrative Games",
+    "Acoustic Guitar",
+    "Sketchbooks",
+    "Light and Shadow Studies",
+    "Quiet Creative Spaces"
+];
 ?>
 
 <!DOCTYPE html>
@@ -10,231 +32,121 @@ $level = 12;
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo $name; ?> | Portfolio</title>
+<title><?php echo $name; ?></title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --neon: #00fff5;
-    --purple: #7a00ff;
-    --bg: #0f0f1a;
-    --card: rgba(255,255,255,0.05);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
+body {
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: white;
-    overflow-x:hidden;
+    background: #f7f6f3;
+    color: #2a2a2a;
+    line-height: 1.7;
 }
 
-/* Animated Background */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle at 30% 30%, var(--purple), transparent 40%),
-                radial-gradient(circle at 70% 70%, var(--neon), transparent 40%);
-    animation: moveBg 10s linear infinite alternate;
-    z-index:-1;
+.container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
-@keyframes moveBg{
-    from{ transform: translate(-10%, -10%); }
-    to{ transform: translate(10%, 10%); }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-header{
-    padding:60px 20px;
-    text-align:center;
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.6;
+    margin-bottom: 60px;
 }
 
-h1{
-    font-family:'Orbitron', sans-serif;
-    font-size:3rem;
-    text-shadow: 0 0 20px var(--neon);
+.section {
+    margin-bottom: 80px;
 }
 
-.subtitle{
-    opacity:0.8;
-    margin-top:10px;
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.level-box{
-    margin-top:20px;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.progress{
-    width:300px;
-    height:12px;
-    background:#222;
-    margin:10px auto;
-    border-radius:20px;
-    overflow:hidden;
+.gallery img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.progress-bar{
-    height:100%;
-    background:linear-gradient(90deg, var(--neon), var(--purple));
-    width: <?php echo $xp; ?>%;
-    animation: loadBar 2s ease forwards;
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-@keyframes loadBar{
-    from{ width:0 }
+.interests span {
+    display: inline-block;
+    margin: 6px 10px 6px 0;
+    padding: 6px 12px;
+    background: #eae7e1;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
-.section{
-    padding:60px 20px;
-    text-align:center;
-}
-
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-    margin-top:40px;
-}
-
-.card{
-    background:var(--card);
-    backdrop-filter: blur(10px);
-    padding:30px;
-    width:280px;
-    border-radius:20px;
-    transition:0.4s ease;
-    cursor:pointer;
-    border:1px solid rgba(255,255,255,0.1);
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 0 30px var(--neon);
-}
-
-.card h3{
-    font-family:'Orbitron', sans-serif;
-    margin-bottom:15px;
-}
-
-button{
-    margin-top:20px;
-    padding:10px 20px;
-    background:transparent;
-    border:1px solid var(--neon);
-    color:white;
-    cursor:pointer;
-    border-radius:20px;
-    transition:0.3s;
-}
-
-button:hover{
-    background:var(--neon);
-    color:black;
-    box-shadow:0 0 20px var(--neon);
-}
-
-footer{
-    text-align:center;
-    padding:40px;
-    opacity:0.6;
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    margin-top: 100px;
+    margin-bottom: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<div class="container">
+
     <h1><?php echo $name; ?></h1>
     <div class="subtitle"><?php echo $title; ?></div>
 
-    <div class="level-box">
-        <p>Level <?php echo $level; ?> Designer</p>
-        <div class="progress">
-            <div class="progress-bar"></div>
-        </div>
-        <small><?php echo $xp; ?>% to next level</small>
+    <div class="section">
+        <h2>About</h2>
+        <?php foreach ($about as $paragraph): ?>
+            <p><?php echo $paragraph; ?></p>
+        <?php endforeach; ?>
     </div>
-</header>
 
-<section class="section">
-    <h2>🎮 Select Your Mission</h2>
-
-    <div class="cards">
-        <div class="card" onclick="openMission('about')">
-            <h3>01 — About Me</h3>
-            <p>Learn the backstory of the designer.</p>
-        </div>
-
-        <div class="card" onclick="openMission('projects')">
-            <h3>02 — Projects</h3>
-            <p>Explore completed design quests.</p>
-        </div>
-
-        <div class="card" onclick="openMission('contact')">
-            <h3>03 — Contact</h3>
-            <p>Start a new collaboration mission.</p>
+    <div class="section">
+        <h2>Selected Works</h2>
+        <div class="gallery">
+            <?php foreach ($artworks as $art): ?>
+                <img src="<?php echo $art; ?>" alt="Artwork">
+            <?php endforeach; ?>
         </div>
     </div>
 
-    <div id="missionContent" style="margin-top:40px;"></div>
-</section>
+    <div class="section">
+        <h2>Interests</h2>
+        <div class="interests">
+            <?php foreach ($interests as $interest): ?>
+                <span><?php echo $interest; ?></span>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
-<footer>
-    © <?php echo date("Y"); ?> <?php echo $name; ?> — Game Mode Active
-</footer>
+    <footer>
+        © <?php echo date("Y"); ?> <?php echo $name; ?>
+    </footer>
 
-<script>
-function openMission(type){
-    const content = document.getElementById("missionContent");
-
-    if(type === "about"){
-        content.innerHTML = `
-        <div class="card">
-            <h3>Designer Lore</h3>
-            <p>A UI/UX Designer focused on crafting seamless, intuitive experiences.
-            Specialized in research-driven design and system building.</p>
-        </div>`;
-    }
-
-    if(type === "projects"){
-        content.innerHTML = `
-        <div class="card">
-            <h3>Featured Quest</h3>
-            <p>CRM Tool for Real Estate — Increased usability and workflow efficiency.</p>
-            <p>Developer Community Event Designs — GitHub PH</p>
-        </div>`;
-    }
-
-    if(type === "contact"){
-        content.innerHTML = `
-        <div class="card">
-            <h3>Start Mission</h3>
-            <p>Email: hello@yourdomain.com</p>
-            <button onclick="levelUp()">Send Signal</button>
-        </div>`;
-    }
-}
-
-function levelUp(){
-    alert("🚀 Collaboration Request Sent!");
-}
-
-document.addEventListener("keydown", function(e){
-    if(e.key === "x"){
-        document.body.style.background = "#000";
-    }
-});
-</script>
+</div>
 
 </body>
 </html>
